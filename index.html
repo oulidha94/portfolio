@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Sami Ben Mansour · Consultant RH · Formateur · Chercheur</title>
+  <meta name="description" content="Portfolio professionnel de Sami Ben Mansour — consultant RH senior, formateur international, chercheur en sciences de gestion. SHRM-CP · CRHA · 25 ans d'expérience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================
+       VARIABLES & RESET
+    ============================ */
+    :root {
+      --noir:       #0f0f0f;
+      --encre:      #1a1a1a;
+      --gris-fonce: #3a3a3a;
+      --gris-moyen: #6b6b6b;
+      --gris-clair: #b0b0b0;
+      --bordure:    #e2e2e2;
+      --fond:       #fafaf8;
+      --blanc:      #ffffff;
+      --accent:     #c8a96e;       /* or discret */
+      --accent-doux:#f0e8d6;
+      --serif:      'DM Serif Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      --rayon:      4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--fond);
+      color: var(--encre);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ============================
+       ANIMATIONS D'ENTRÉE
+    ============================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+    }
+    .fade-up:nth-child(1)  { animation-delay: 0.05s; }
+    .fade-up:nth-child(2)  { animation-delay: 0.12s; }
+    .fade-up:nth-child(3)  { animation-delay: 0.19s; }
+    .fade-up:nth-child(4)  { animation-delay: 0.26s; }
+    .fade-up:nth-child(5)  { animation-delay: 0.33s; }
+    .fade-up:nth-child(6)  { animation-delay: 0.40s; }
+    .fade-up:nth-child(7)  { animation-delay: 0.47s; }
+    .fade-up:nth-child(8)  { animation-delay: 0.54s; }
+
+    /* ============================
+       BARRE DE NAVIGATION
+    ============================ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--bordure);
+      padding: 0 2rem;
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    nav .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--noir);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gris-moyen);
+      padding: 0.3rem 0.6rem;
+      border-radius: var(--rayon);
+      transition: color var(--transition), background var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--noir);
+      background: var(--accent-doux);
+    }
+
+    /* ============================
+       HERO
+    ============================ */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero-text .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--noir);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--gris-fonce);
+    }
+
+    .hero-text .bio {
+      font-size: 1.02rem;
+      color: var(--gris-fonce);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      background: var(--accent-doux);
+      color: var(--gris-fonce);
+      border: 1px solid #d9c9a8;
+    }
+
+    .hero-contact {
+      font-size: 0.83rem;
+      color: var(--gris-moyen);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .hero-contact a {
+      color: var(--gris-fonce);
+      transition: color var(--transition);
+    }
+    .hero-contact a:hover { color: var(--accent); }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: flex-end;
+      padding-top: 0.5rem;
+    }
+
+    .stat-block {
+      text-align: right;
+    }
+
+    .stat-block .num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      color: var(--noir);
+      line-height: 1;
+    }
+
+    .stat-block .lbl {
+      font-size: 0.72rem;
+      color: var(--gris-clair);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ============================
+       SÉPARATEUR
+    ============================ */
+    .divider {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .divider hr {
+      border: none;
+      border-top: 1px solid var(--bordure);
+    }
+
+    /* ============================
+       SECTIONS COMMUNES
+    ============================ */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--noir);
+      line-height: 1.2;
+    }
+
+    /* ============================
+       SECTION : CV & DOCUMENTS
+    ============================ */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .doc-card {
+      position: relative;
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 1.4rem 1.4rem 1.2rem;
+      transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .doc-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .doc-icon {
+      width: 36px;
+      height: 44px;
+      background: var(--accent-doux);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .doc-icon::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--fond);
+      border-left: 1px solid #d9c9a8;
+      border-bottom: 1px solid #d9c9a8;
+      border-top-right-radius: 4px;
+    }
+
+    .doc-icon svg { color: var(--accent); }
+
+    .doc-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--encre);
+      line-height: 1.3;
+    }
+
+    .doc-sub {
+      font-size: 0.76rem;
+      color: var(--gris-moyen);
+    }
+
+    .doc-dl {
+      margin-top: auto;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-transform: uppercase;
+    }
+
+    /* ============================
+       SECTION : CERTIFICATIONS
+    ============================ */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .cert-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      border-color: #d9c9a8;
+    }
+
+    .cert-orb {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent-doux);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--gris-fonce);
+      text-align: center;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .cert-info { flex: 1; }
+
+    .cert-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--encre);
+      margin-bottom: 0.2rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.76rem;
+      color: var(--gris-moyen);
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-link {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color var(--transition);
+    }
+    .cert-link:hover { color: var(--gris-fonce); }
+
+    /* ============================
+       SECTION : RÉFÉRENCES
+    ============================ */
+    .refs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .ref-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.4rem;
+      transition: box-shadow var(--transition);
+    }
+
+    .ref-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+
+    .ref-quote {
+      font-size: 0.88rem;
+      color: var(--gris-fonce);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .ref-quote::before { content: '\201C'; }
+    .ref-quote::after  { content: '\201D'; }
+
+    .ref-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--encre);
+    }
+
+    .ref-role {
+      font-size: 0.74rem;
+      color: var(--gris-moyen);
+    }
+
+    /* ============================
+       SECTION : CATALOGUE
+    ============================ */
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .theme-item {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .theme-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .theme-num {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--accent);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: right;
+    }
+
+    .theme-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--encre);
+      line-height: 1.35;
+    }
+
+    /* ============================
+       SECTION : OUTILS DIGITAUX
+    ============================ */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 1.4rem;
+      transition: box-shadow var(--transition), border-color var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .tool-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: var(--accent);
+    }
+
+    .tool-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-doux);
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      margin-bottom: 0.7rem;
+    }
+
+    .tool-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--encre);
+      margin-bottom: 0.4rem;
+    }
+
+    .tool-desc {
+      font-size: 0.8rem;
+      color: var(--gris-moyen);
+      line-height: 1.6;
+    }
+
+    /* ============================
+       SECTION : RECHERCHE
+    ============================ */
+    .publis-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .publi-item {
+      background: var(--blanc);
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 1.2rem;
+      align-items: center;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .publi-item:hover {
+      border-color: #d9c9a8;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .publi-year {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .publi-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--encre);
+      margin-bottom: 0.25rem;
+    }
+
+    .publi-venue {
+      font-size: 0.78rem;
+      color: var(--gris-moyen);
+      font-style: italic;
+    }
+
+    .publi-type {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+      background: var(--accent-doux);
+      color: var(--gris-fonce);
+    }
+
+    .thesis-block {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--accent-doux) 0%, #f8f4ec 100%);
+      border: 1px solid #d9c9a8;
+      border-radius: 8px;
+      padding: 1.6rem;
+    }
+
+    .thesis-block .th-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .thesis-block .th-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--encre);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .thesis-block .th-meta {
+      font-size: 0.8rem;
+      color: var(--gris-moyen);
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    footer {
+      border-top: 1px solid var(--bordure);
+      margin-top: 2rem;
+      padding: 2.5rem 2rem;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-brand {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--encre);
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      font-size: 0.78rem;
+      color: var(--gris-moyen);
+      transition: color var(--transition);
+    }
+
+    footer .footer-links a:hover { color: var(--accent); }
+
+    footer .footer-copy {
+      font-size: 0.72rem;
+      color: var(--gris-clair);
+      text-align: right;
+    }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.2rem 2.5rem;
+      }
+      .hero-meta {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .stat-block { text-align: left; }
+      .section { padding: 2.5rem 1.2rem; }
+      nav .nav-links { display: none; }
+      footer .footer-inner { flex-direction: column; align-items: flex-start; }
+      footer .footer-copy { text-align: left; }
+      .publi-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .publi-year { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-brand">Sami Ben Mansour</span>
+      <div class="nav-links">
+        <a href="#identite">Identité</a>
+        <a href="#cv">CV & Documents</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#references">Références</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#outils">Outils</a>
+        <a href="#recherche">Recherche</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="identite" class="hero">
+    <div class="hero-text">
+      <p class="eyebrow fade-up">Portfolio professionnel · 2026</p>
+      <h1 class="fade-up">
+        Consultant RH senior.<br/>
+        <em>Formateur. Chercheur.</em>
+      </h1>
+      <p class="bio fade-up">
+        Je travaille à l'intersection du conseil RH, de la formation et de la recherche
+        en sciences de gestion, dans un contexte où l'IA redéfinit les organisations
+        et les compétences. Fondateur d'Etik. Vingt-cinq ans d'expérience en Tunisie,
+        MENA et à l'international.
+      </p>
+      <div class="badges fade-up">
+        <span class="badge">SHRM-CP</span>
+        <span class="badge">CRHA</span>
+        <span class="badge">Doctorant en Sciences de Gestion</span>
+        <span class="badge">Tunis · MENA · International</span>
+      </div>
+      <div class="hero-contact fade-up">
+        <span>
+          <a href="mailto:samibm@etik.com">samibm@etik.com</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+21654000270">+216 54 000 270</a>
+        </span>
+        <span>
+          <a href="https://samibenmansour.com" target="_blank">samibenmansour.com</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/samibenmansour" target="_blank">LinkedIn</a>
+        </span>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="stat-block fade-up">
+        <div class="num">25+</div>
+        <div class="lbl">Années d'expérience</div>
+      </div>
+      <div class="stat-block fade-up">
+        <div class="num">4</div>
+        <div class="lbl">Pays & régions</div>
+      </div>
+      <div class="stat-block fade-up">
+        <div class="num">3</div>
+        <div class="lbl">Axes d'activité</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== CV & DOCUMENTS ==================== -->
+  <section id="cv" class="section">
+    <div class="section-header">
+      <span class="section-label">01</span>
+      <h2 class="section-title">CV & Documents</h2>
+    </div>
+    <div class="docs-grid">
+
+      <!-- === À METTRE À JOUR : remplacer les href="#" par les vrais liens Netlify === -->
+      <a class="doc-card" href="https://samibenmansour.com/docs/CV-Sami-Ben-Mansour-2026.pdf" target="_blank">
+        <div class="doc-icon">
+          <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 0h9l6 6v14H3V0z" fill="currentColor" opacity=".18"/>
+            <path d="M10 0v6h6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M5 10h8M5 13h8M5 7h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="doc-name">CV 2026 — Version standard</div>
+        <div class="doc-sub">Synthèse du parcours et des compétences clés</div>
+        <div class="doc-dl">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger
+        </div>
+      </a>
+
+      <a class="doc-card" href="https://samibenmansour.com/docs/CV-detaille-Sami-Ben-Mansour-2026.pdf" target="_blank">
+        <div class="doc-icon">
+          <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 0h9l6 6v14H3V0z" fill="currentColor" opacity=".18"/>
+            <path d="M10 0v6h6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M5 10h8M5 13h8M5 7h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="doc-name">CV 2026 — Version détaillée</div>
+        <div class="doc-sub">Missions, formations délivrées, publications</div>
+        <div class="doc-dl">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger
+        </div>
+      </a>
+
+      <a class="doc-card" href="https://samibenmansour.com/docs/CV-CNFCPP.pdf" target="_blank">
+        <div class="doc-icon">
+          <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
+            <path d="M3 0h9l6 6v14H3V0z" fill="currentColor" opacity=".18"/>
+            <path d="M10 0v6h6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M5 10h8M5 13h8M5 7h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="doc-name">CV format CNFCPP</div>
+        <div class="doc-sub">Format officiel agréé pour les appels d'offres tunisiens</div>
+        <div class="doc-dl">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger
+        </div>
+      </a>
+
+      <a class="doc-card" href="https://samibenmansour.com/docs/Themes-Catalogue-Formation.pdf" target="_blank">
+        <div class="doc-icon">
+          <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
+            <path d="M3 0h9l6 6v14H3V0z" fill="currentColor" opacity=".18"/>
+            <path d="M10 0v6h6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M5 10h8M5 13h8M5 7h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="doc-name">Catalogue de formation</div>
+        <div class="doc-sub">Thématiques les plus demandées — édition 2026</div>
+        <div class="doc-dl">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v7M3 6l3 3 3-3M1 11h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Télécharger
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+  <section id="certifications" class="section">
+    <div class="section-header">
+      <span class="section-label">02</span>
+      <h2 class="section-title">Certifications & Accréditations</h2>
+    </div>
+    <div class="certs-grid">
+
+      <div class="cert-card">
+        <div class="cert-orb">SHRM<br/>-CP</div>
+        <div class="cert-info">
+          <div class="cert-name">SHRM Certified Professional</div>
+          <div class="cert-issuer">Society for Human Resource Management · USA</div>
+          <a class="cert-link" href="https://samibenmansour.com/shrm-cp" target="_blank">
+            Voir la certification
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-orb">CRHA</div>
+        <div class="cert-info">
+          <div class="cert-name">Conseiller en Ressources Humaines Agréé</div>
+          <div class="cert-issuer">Ordre des CRHA · Québec, Canada</div>
+          <a class="cert-link" href="https://samibenmansour.com/crha" target="_blank">
+            Voir la certification
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-orb" style="font-size:0.55rem">Tech<br/>Rec</div>
+        <div class="cert-info">
+          <div class="cert-name">Tech Recruitment Certified Professional</div>
+          <div class="cert-issuer">DevSkiller · N° 376621099304921744</div>
+          <span class="cert-link" style="cursor:default;color:var(--gris-clair);">Certificat de compétences</span>
+        </div>
+      </div>
+
+      <!-- === AJOUTER D'AUTRES CERTIFICATIONS ICI === -->
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== RÉFÉRENCES ==================== -->
+  <section id="references" class="section">
+    <div class="section-header">
+      <span class="section-label">03</span>
+      <h2 class="section-title">Références & Témoignages clients</h2>
+    </div>
+    <div class="refs-grid">
+
+      <!-- === REMPLACER PAR DES VRAIS TÉMOIGNAGES === -->
+      <div class="ref-card">
+        <div class="ref-quote">Sami Ben Mansour allie une rigueur académique rare à une capacité de mise en pratique immédiate. Sa maîtrise des enjeux RH et de l'IA générative est un vrai différenciateur dans le paysage de la formation.</div>
+        <div class="ref-author">Prénom Nom</div>
+        <div class="ref-role">Titre · Organisation</div>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-quote">Une intervention qui a dépassé nos attentes. La pédagogie active, la qualité des outils mis à disposition et la posture bienveillante ont transformé la dynamique de nos équipes managériales.</div>
+        <div class="ref-author">Prénom Nom</div>
+        <div class="ref-role">Titre · Organisation</div>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-quote">Consultant de haut niveau, capable de s'adapter instantanément au terrain. Sa lecture de nos défis organisationnels a été d'une précision remarquable dès la phase de diagnostic.</div>
+        <div class="ref-author">Prénom Nom</div>
+        <div class="ref-role">Titre · Organisation</div>
+      </div>
+
+      <!-- === AJOUTER D'AUTRES RÉFÉRENCES ICI === -->
+    </div>
+    <p style="margin-top:1.2rem; font-size:0.78rem; color:var(--gris-moyen);">
+      Liste complète des clients et références disponible sur demande ou sur
+      <a href="https://samibenmansour.com/references" target="_blank" style="color:var(--accent);">samibenmansour.com/references</a>.
+    </p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== CATALOGUE ==================== -->
+  <section id="catalogue" class="section">
+    <div class="section-header">
+      <span class="section-label">04</span>
+      <h2 class="section-title">Catalogue de formation — Thèmes principaux</h2>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-item"><span class="theme-num">01</span><span class="theme-name">Management & Leadership situationnel</span></div>
+      <div class="theme-item"><span class="theme-num">02</span><span class="theme-name">IA générative pour les RH et le management</span></div>
+      <div class="theme-item"><span class="theme-num">03</span><span class="theme-name">Gouvernance RH & performance organisationnelle</span></div>
+      <div class="theme-item"><span class="theme-num">04</span><span class="theme-name">Intelligence émotionnelle & soft skills</span></div>
+      <div class="theme-item"><span class="theme-num">05</span><span class="theme-name">Innovation, Design Thinking & créativité</span></div>
+      <div class="theme-item"><span class="theme-num">06</span><span class="theme-name">GPEC & ingénierie des compétences</span></div>
+      <div class="theme-item"><span class="theme-num">07</span><span class="theme-name">Recrutement augmenté & marque employeur</span></div>
+      <div class="theme-item"><span class="theme-num">08</span><span class="theme-name">Recherche appliquée & collecte de données</span></div>
+      <div class="theme-item"><span class="theme-num">09</span><span class="theme-name">Transformation digitale & conduite du changement</span></div>
+      <div class="theme-item"><span class="theme-num">10</span><span class="theme-name">Communication managériale & négociation</span></div>
+      <div class="theme-item"><span class="theme-num">11</span><span class="theme-name">Analyse de données RH & tableaux de bord</span></div>
+      <div class="theme-item"><span class="theme-num">12</span><span class="theme-name">Responsabilité numérique des organisations (RNE)</span></div>
+      <!-- === AJOUTER D'AUTRES THÈMES ICI === -->
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== OUTILS DIGITAUX ==================== -->
+  <section id="outils" class="section">
+    <div class="section-header">
+      <span class="section-label">05</span>
+      <h2 class="section-title">Outils & Réalisations digitales</h2>
+    </div>
+    <div class="tools-grid">
+
+      <a class="tool-card" href="https://ia-score-rh.samibenmansour.com" target="_blank">
+        <span class="tool-tag">Diagnostic · Lead gen</span>
+        <div class="tool-name">IA-Score RH</div>
+        <div class="tool-desc">Diagnostic interactif de maturité IA pour les fonctions RH. Génère un score personnalisé et des recommandations ciblées.</div>
+      </a>
+
+      <a class="tool-card" href="https://samibenmansour.com/demo?outil=HR%20Analytica" target="_blank">
+        <span class="tool-tag">Analytics · Reporting</span>
+        <div class="tool-name">HR Analytica</div>
+        <div class="tool-desc">Tableau de bord RH alimenté par l'IA — import Excel/CSV, interprétation automatique, génération de bilan social.</div>
+      </a>
+
+      <a class="tool-card" href="https://samibenmansour.com/demo?outil=Chatbot%20RH" target="_blank">
+        <span class="tool-tag">IA conversationnelle</span>
+        <div class="tool-name">Chatbot RH Tunisien</div>
+        <div class="tool-desc">Assistant trilingue spécialisé dans le droit du travail tunisien (FR · AR · EN), avec mode démo et prompt caching.</div>
+      </a>
+
+      <a class="tool-card" href="https://samibenmansour.com/demo?outil=Hayersight" target="_blank">
+        <span class="tool-tag">Recrutement · IA</span>
+        <div class="tool-name">Hayersight</div>
+        <div class="tool-desc">Suite de recrutement automatisée — génération d'offres d'emploi structurées à partir d'une fiche de poste.</div>
+      </a>
+
+      <a class="tool-card" href="https://le-jeu-rh.samibenmansour.com" target="_blank">
+        <span class="tool-tag">Formation · Gamification</span>
+        <div class="tool-name">Le Jeu RH</div>
+        <div class="tool-desc">Référentiel RH interactif — 15 pratiques, 82 outils, du recrutement à l'offboarding. Mode jeu intégré.</div>
+      </a>
+
+      <a class="tool-card" href="https://samibenmansour.com/demo?outil=Trainsight" target="_blank">
+        <span class="tool-tag">Ingénierie pédagogique</span>
+        <div class="tool-name">Trainsight</div>
+        <div class="tool-desc">Ingénierie de la formation en 4 étapes automatisées — du recueil des besoins au rapport annuel.</div>
+      </a>
+
+      <!-- === AJOUTER D'AUTRES OUTILS ICI === -->
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ==================== RECHERCHE ==================== -->
+  <section id="recherche" class="section">
+    <div class="section-header">
+      <span class="section-label">06</span>
+      <h2 class="section-title">Recherche & Publications</h2>
+    </div>
+
+    <div class="thesis-block">
+      <div class="th-label">Thèse en cours · Cotutelle Tunisie — France</div>
+      <div class="th-title">Responsabilité Numérique des Entreprises (RNE) et engagement organisationnel de la Génération Z</div>
+      <div class="th-meta">Sciences de gestion · ISCAE Manouba / Université française en cotutelle</div>
+    </div>
+
+    <div class="publis-list" style="margin-top:1.2rem;">
+
+      <div class="publi-item">
+        <div class="publi-year">2025</div>
+        <div>
+          <div class="publi-title">L'impact positif des organisations en Afrique : histoires de réussite et innovations</div>
+          <div class="publi-venue">In <em>Ingénieuse et Talentueuse Afrique</em> · Éd. EMS · dir. Frimousse &amp; Benchekroun</div>
+          <span class="publi-type">Chapitre d'ouvrage</span>
+        </div>
+      </div>
+
+      <div class="publi-item">
+        <div class="publi-year">2024</div>
+        <div>
+          <div class="publi-title">L'incidence de l'IA sur le rôle et le statut des ressources humaines dans l'organisation</div>
+          <div class="publi-venue">Carrefour RH · Ordre des CRHA · Québec</div>
+          <span class="publi-type">Article</span>
+        </div>
+      </div>
+
+      <div class="publi-item">
+        <div class="publi-year">2020</div>
+        <div>
+          <div class="publi-title">Vermeg, une success story africaine, un défi mondial</div>
+          <div class="publi-venue">In <em>Africa Positive Impact</em> · Éd. EMS · dir. Frimousse &amp; Le Bihan</div>
+          <span class="publi-type">Chapitre d'ouvrage</span>
+        </div>
+      </div>
+
+      <!-- === AJOUTER D'AUTRES PUBLICATIONS ICI === -->
+    </div>
+
+    <p style="margin-top:1.2rem; font-size:0.78rem; color:var(--gris-moyen);">
+      <a href="https://samibenmansour.com/publications" target="_blank" style="color:var(--accent);">Toutes les publications →</a>
+    </p>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">Sami Ben Mansour</span>
+      <div class="footer-links">
+        <a href="https://samibenmansour.com" target="_blank">samibenmansour.com</a>
+        <a href="https://www.linkedin.com/in/samibenmansour" target="_blank">LinkedIn</a>
+        <a href="mailto:samibm@etik.com">samibm@etik.com</a>
+        <a href="https://samibenmansour.com/etik" target="_blank">Etik</a>
+      </div>
+      <div class="footer-copy">© 2026 Sami Ben Mansour<br/>Fondateur d'Etik · Tunis</div>
+    </div>
+  </footer>
+
+</body>
+</html>
